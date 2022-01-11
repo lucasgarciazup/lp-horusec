@@ -61,6 +61,7 @@ module.exports = {
       options: {
         fonts: [
           `montserrat\:300,400,500,600,700`,
+          `roboto\:300,400,500,600,700`,
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
