@@ -1,46 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Hamburguer, Header, LangSelect, MenuLink, MenuList, MenuWrapper, Nav } from './styles';
 import { Dropdown, NavDropdown } from 'react-bootstrap';
 
 import logo from '../../assets/logos/app.png';
+
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+
+
 const Navbar: React.FC = () => {
+
+  const { language, languages, changeLanguage } = useI18next();
+  const { t } = useTranslation();
 
   const menus = [
     {
-      title: 'Sobre o Horusec',
+      title: t("navbar_about_us"),
       link: '/about',
     },
     {
-      title: 'Documentação',
+      title: t("navbar_docs"),
       link: '/docs',
     },
     {
-      title: 'Comunidade',
+      title: t("navbar_community"),
       link: '/community',
     },
     {
-      title: 'Github',
+      title: t("navbar_github"),
       link: 'https://github.com/ZupIT/horusec',
       target: '_blank'
     },
   ];
-
-  const languages = [
-    {
-      text: "Portugues",
-      value: "pt-BR",
-    },
-    {
-      text: "English",
-      value: 'en-US'
-    }
-  ]
-
-  const currentLang = languages[0];
-
-  const handleSelect = value => {
-    console.log(value);
-  }
 
   return (
     <Header>
@@ -52,10 +42,10 @@ const Navbar: React.FC = () => {
         <MenuWrapper>
           <MenuList>
             {menus.map(menu => (
-              <MenuLink key={menu.title}>
-                <a href={menu.link} {...menu.target ? { target: '_blank' } : ''}>
+              <MenuLink key={menu.link}>
+                <Link to={menu.link} {...menu.target ? { target: '_blank' } : ''}>
                   {menu.title}
-                </a>
+                </Link>
               </MenuLink>
             ))}
           </MenuList>
@@ -63,11 +53,11 @@ const Navbar: React.FC = () => {
         <LangSelect>
           <NavDropdown
             id="nav-dropdown-languages"
-            title={currentLang.text}
+            title={language}
           >
-            {languages.filter(item => item.text !== currentLang.text).map((item, index) => (
-              <NavDropdown.Item key={index} onClick={() => handleSelect(item.value)}>
-                {item.text}
+            {languages.map(item => (
+              <NavDropdown.Item key={item} onClick={() => changeLanguage(item)}>
+                {item}
               </NavDropdown.Item>
             ))}
           </NavDropdown>

@@ -11,6 +11,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -65,6 +67,38 @@ module.exports = {
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/animations`,
+        name: `assets`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`ptbr`, `en`],
+        defaultLanguage: `ptbr`,
+        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+        siteUrl: siteMetadata.siteUrl,
+        // you can pass any i18next options
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false
+        }
       }
     },
     `gatsby-plugin-offline`

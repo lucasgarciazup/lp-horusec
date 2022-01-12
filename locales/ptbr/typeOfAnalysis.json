@@ -1,0 +1,17 @@
+{
+    "type_of_analysis_title" : "Tipos de análise Horusec",
+    "type_of_analysis_subtitle": "O Horusec realiza 3 tipos de análises de desempenho para identificar se existe alguma falha de segurança:",
+    
+    "type_of_analysis_card_1_icon": "",
+    "type_of_analysis_card_1_title": "Teste estático de segurança de aplicativos (SAST)",
+    "type_of_analysis_card_1_caption": "Analisa vulnerabilidades de Projetos Web, App e Desktop, Processos de qualidade e Infraestrutura como código (IaC).",
+    
+    "type_of_analysis_card_2_icon": "",
+    "type_of_analysis_card_2_title": "Vazamentos",
+    "type_of_analysis_card_2_caption": "Investiga arquivos em busca de possíveis vazamentos de credenciais, chaves privadas ou senhas codificadas.",
+    
+    "type_of_analysis_card_3_icon": "",
+    "type_of_analysis_card_3_title": "Auditoria de dependência",
+    "type_of_analysis_card_3_caption": "Verifica as dependências do projeto para buscar problemas de segurança em bibliotecas."
+    
+}

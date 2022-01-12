@@ -4,9 +4,10 @@ import Footer from '../components/Footer'
 import { GlobalStyle } from '../styles/global'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { graphql } from 'gatsby';
 
 
-const Default: React.FC = ({ children }) => {
+export default function Default({ children }) {
   return (
     <>
       <Navbar />
@@ -16,5 +17,3 @@ const Default: React.FC = ({ children }) => {
     </>
   );
 }
-
-export default Default;
