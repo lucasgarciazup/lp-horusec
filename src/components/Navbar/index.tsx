@@ -1,11 +1,8 @@
-import Citric, { Container, Image, Link, Select, Text } from 'citric';
 import React from 'react';
-
-// import { Container } from './styles';
+import { Hamburguer, Header, LangSelect, MenuLink, MenuList, MenuWrapper, Nav } from './styles';
+import { Dropdown, NavDropdown } from 'react-bootstrap';
 
 import logo from '../../assets/logos/app.png';
-import { Hamburguer, Header, LangSelect, MenuItem, MenuList, MenuWrapper, Nav } from './styles';
-
 const Navbar: React.FC = () => {
 
   const menus = [
@@ -39,31 +36,44 @@ const Navbar: React.FC = () => {
     }
   ]
 
+  const currentLang = languages[0];
+
+  const handleSelect = value => {
+    console.log(value);
+  }
+
   return (
-    <Citric>
-      <Header>
-        <Nav>
-          <div>
-            <Image img={logo} width="160px" height="auto" type='scale-down' />
-          </div>
-          <Hamburguer>H</Hamburguer>
-          <MenuWrapper>
-            <MenuList>
-              {menus.map(menu => (
-                <MenuItem key={menu.title}>
-                  <Link path={menu.link} {...menu.target ? { target: '_blank' } : ''}>
-                    {menu.title}
-                  </Link>
-                </MenuItem>
-              ))}
-            </MenuList>
-          </MenuWrapper>
-          <LangSelect>
-            <Select items={languages} onSelected={() => { }} initialSelected={languages[0].text} />
-          </LangSelect>
-        </Nav>
-      </Header>
-    </Citric>
+    <Header>
+      <Nav>
+        <div>
+          <img src={logo} width="160px" height="auto" />
+        </div>
+        <Hamburguer>H</Hamburguer>
+        <MenuWrapper>
+          <MenuList>
+            {menus.map(menu => (
+              <MenuLink key={menu.title}>
+                <a href={menu.link} {...menu.target ? { target: '_blank' } : ''}>
+                  {menu.title}
+                </a>
+              </MenuLink>
+            ))}
+          </MenuList>
+        </MenuWrapper>
+        <LangSelect>
+          <NavDropdown
+            id="nav-dropdown-languages"
+            title={currentLang.text}
+          >
+            {languages.filter(item => item.text !== currentLang.text).map((item, index) => (
+              <NavDropdown.Item key={index} onClick={() => handleSelect(item.value)}>
+                {item.text}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+        </LangSelect>
+      </Nav>
+    </Header>
   );
 }
 

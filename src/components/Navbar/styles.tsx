@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import arrowDown from '../../assets/icons/arrow-down.svg';
 
 export const Header = styled.header`
     background: #fff;
@@ -53,7 +54,7 @@ export const MenuList = styled.ul`
     }
 `;
 
-export const MenuItem = styled.li`
+export const MenuLink = styled.li`
 
     a {
         font-family: Montserrat;
@@ -72,4 +73,18 @@ export const LangSelect = styled.div`
 
     display: block;
     width: 200px;
+
+    #nav-dropdown-languages { 
+        color: #404659;
+        border: 1px solid #404659;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    #nav-dropdown-languages::after {
+        content: url(${arrowDown});
+        margin-left: 0.5em;
+        vertical-align: 0;
+        border: none;
+    }
 `;

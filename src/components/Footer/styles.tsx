@@ -50,6 +50,7 @@ export const List = styled.div`
 `;
 
 export const Copyright = styled.p`
+    margin-top: 32px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
