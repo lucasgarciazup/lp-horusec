@@ -2,7 +2,8 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-import { Card, CardCaption, CardIcon, CardTitle, Section, Title } from './styles';
+import { Card, CardCaption, CardIcon, CardTitle } from './styles';
+import { Section, TitleSection } from '../../../styles/layouts';
 
 const TypesOfAnalysis: React.FC = () => {
   const { t } = useTranslation();
@@ -27,12 +28,12 @@ const TypesOfAnalysis: React.FC = () => {
 
 
   return (
-    <Section>
+    <Section dark>
       <Container>
-        <Title>{t("type_of_analysis_title")}</Title>
+        <TitleSection>{t("type_of_analysis_title")}</TitleSection>
         <Row className="mt-5 justify-content-center">
           {cards.map(item => (
-            <Col className="col-auto">
+            <Col>
               <Card>
                 <CardIcon />
                 <CardTitle>{item.title}</CardTitle>

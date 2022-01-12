@@ -18,13 +18,12 @@ const Welcome: React.FC = () => {
                 <Title>{t("welcome_title")}</Title>
                 <SubTitle>{t("welcome_subtitle")}</SubTitle>
                 <div className='d-flex gap-3'>
-
-                <Download href='https://docs.horusec.io/docs/pt-br/cli/installation/' target="_blank">
-                  {t("welcome_download")}
-                </Download>
-                <Contribute href="https://github.com/ZupIT/horusec" target="_blank">
-                  {t("welcome_contribute")}
-                </Contribute>
+                  <Download href='https://docs.horusec.io/docs/pt-br/cli/installation/' target="_blank">
+                    {t("welcome_download")}
+                  </Download>
+                  <Contribute href="https://github.com/ZupIT/horusec" target="_blank">
+                    {t("welcome_contribute")}
+                  </Contribute>
                 </div>
             </Col>
 
