@@ -1,5 +1,7 @@
-declare module '*.svg';
+declare module "*.svg"
 
-declare module '*.png';
+declare module "*.png"
 
-declare module '*.jpg';
+declare module "*.jpg"
+
+declare module "*.gif"

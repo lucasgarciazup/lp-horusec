@@ -1,20 +1,20 @@
 import React from "react"
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
 
-import Default from '../templates/default'
-import { graphql } from 'gatsby';
-import Welcome from '../sections/home/welcome';
-import TypesOfAnalysis from '../sections/home/typesOfAnalysis';
-import Languages from '../sections/home/languages';
-import ProjectsWithTrustedCodes from '../sections/home/projectsWithTrustedCodes';
-import CultureOfSafety from '../sections/home/cultureOfSafety';
-import { Col, Container, Row } from 'react-bootstrap';
-import AssistedDevelopment from '../sections/home/assistedDevelopment';
-import ManageFoundVulnerabilities from '../sections/home/manageFoundVulnerabilities';
-import WhoUse from '../sections/home/whoUse';
+import Default from "../templates/default"
+import Welcome from "../sections/home/welcome"
+import TypesOfAnalysis from "../sections/home/typesOfAnalysis"
+import Languages from "../sections/home/languages"
+import ProjectsWithTrustedCodes from "../sections/home/projectsWithTrustedCodes"
+import CultureOfSafety from "../sections/home/cultureOfSafety"
+import { Col, Container, Row } from "react-bootstrap"
+import AssistedDevelopment from "../sections/home/assistedDevelopment"
+import ManageFoundVulnerabilities from "../sections/home/manageFoundVulnerabilities"
+import WhoUse from "../sections/home/whoUse"
 
 export default function Home({ data }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <Default>
       <Welcome />
@@ -23,8 +23,12 @@ export default function Home({ data }) {
       <ProjectsWithTrustedCodes />
       <Container>
         <Row>
-          <Col><CultureOfSafety /></Col>
-          <Col><AssistedDevelopment /></Col>
+          <Col>
+            <CultureOfSafety />
+          </Col>
+          <Col>
+            <AssistedDevelopment />
+          </Col>
         </Row>
       </Container>
       <ManageFoundVulnerabilities />
@@ -35,7 +39,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -45,4 +49,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

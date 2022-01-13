@@ -1,18 +1,18 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
-import { Section, SubTitleSection, TitleSection } from '../../../styles/layouts';
+import React from "react"
+import { Container } from "react-bootstrap"
+import { useTranslation } from "gatsby-plugin-react-i18next"
+import { Section, SubTitleSection, TitleSection } from "../../../styles/layouts"
 
 const Languages: React.FC = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <Section>
-        <Container>
-            <TitleSection>{t("languages_title")}</TitleSection>
-            <SubTitleSection>{t("languages_subtitle")}</SubTitleSection>
-        </Container>
+      <Container>
+        <TitleSection>{t("languages_title")}</TitleSection>
+        <SubTitleSection>{t("languages_subtitle")}</SubTitleSection>
+      </Container>
     </Section>
-  );
+  )
 }
 
-export default Languages;
+export default Languages

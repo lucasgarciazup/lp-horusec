@@ -1,10 +1,9 @@
-import styled from 'styled-components';
-
+import styled from "styled-components"
 
 export const FooterContainer = styled.footer`
-    padding: 56px 0 32px;
-    background: ${props => props.theme.colors.background};
-`;
+  padding: 56px 0 32px;
+  background: ${props => props.theme.colors.background};
+`
 
 export const Topic = styled.h4`
   font-family: Roboto;
@@ -13,7 +12,7 @@ export const Topic = styled.h4`
   font-size: 16px;
   line-height: 24px;
   margin-top: 0;
-`;
+`
 
 export const List = styled.ul`
   width: 100%;
@@ -31,22 +30,20 @@ export const List = styled.ul`
     line-height: 24px;
     color: #404659;
   }
-  
+
   li > a {
     color: #404659 !important;
     text-decoration: none;
   }
-  
-`;
+`
 
 export const Copyright = styled.p`
-    margin-top: 32px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    color: #8C909C;
-`;
-
+  margin-top: 32px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #8c909c;
+`

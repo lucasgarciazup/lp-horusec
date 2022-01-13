@@ -4,14 +4,14 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-const siteMetadata = require('./config/metadata');
+const siteMetadata = require("./config/metadata")
 
 module.exports = {
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -23,7 +23,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#ef4123`,
         display: `standalone`,
-        icon: `static/app.png`
+        icon: `static/app.png`,
       },
     },
     {
@@ -35,14 +35,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        displayName: process.env.NODE_ENV !== 'production'
+        displayName: process.env.NODE_ENV !== "production",
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: [`**/styles.js`]
+        ignore: [`**/styles.js`],
       },
     },
     {
@@ -64,24 +64,24 @@ module.exports = {
         fonts: [
           `montserrat\:300,400,500,600,700`,
           `roboto\:300,400,500,600,700`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,
-        name: `locale`
-      }
+        name: `locale`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/animations`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     {
       resolve: `gatsby-plugin-react-i18next`,
@@ -94,13 +94,13 @@ module.exports = {
         // you can pass any i18next options
         i18nextOptions: {
           interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
+            escapeValue: false, // not needed for react as it escapes by default
           },
           keySeparator: false,
-          nsSeparator: false
-        }
-      }
+          nsSeparator: false,
+        },
+      },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 }
