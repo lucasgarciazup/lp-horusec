@@ -9,6 +9,31 @@ export const Section = styled.section<SectionInterface>`
     background: ${props => props.dark ? '#F5F6F7' : '#FFFF'};
 `;
 
+
+export const TitlePage = styled.section<SectionInterface>`
+    padding: 128px 0;
+    background: ${props => props.theme.colors.background};
+
+    h1 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 80px;
+        text-align: center;
+        color: #113B65;
+    }
+
+    p {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #8C909C;
+    }
+`;
+
 export const TitleSection = styled.h1`
     font-family: Montserrat;
     font-style: normal;
@@ -31,5 +56,28 @@ export const SubTitleSection = styled.h2`
     margin-bottom: 32px;
     text-align: center;
 `;
+
+export const BodySection = styled.div`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A2138;
+
+    h6 {
+        font-weight: bold;
+    }
+`;
+
+export const CaptionSection = styled.p`
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1A2138;
+`;
+
 
 

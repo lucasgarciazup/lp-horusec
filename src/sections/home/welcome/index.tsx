@@ -5,6 +5,7 @@ import { Title, SubTitle, Download, Contribute, Section, Banner } from './styles
 
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import banner from '../../../assets/animations/horus-animation.gif';
+import { ContributeButton, DownloadButton } from '../../../styles/buttons';
 
 const Welcome: React.FC = () => {
 
@@ -17,14 +18,14 @@ const Welcome: React.FC = () => {
             <Col>
                 <Title>{t("welcome_title")}</Title>
                 <SubTitle>{t("welcome_subtitle")}</SubTitle>
-                <div className='d-flex gap-3'>
-                  <Download href='https://docs.horusec.io/docs/pt-br/cli/installation/' target="_blank">
-                    {t("welcome_download")}
-                  </Download>
-                  <Contribute href="https://github.com/ZupIT/horusec" target="_blank">
-                    {t("welcome_contribute")}
-                  </Contribute>
-                </div>
+                <Row>
+                  <Col className='col-4'>
+                    <DownloadButton highlight/>
+                  </Col>
+                  <Col className='col-4'>
+                    <ContributeButton />
+                  </Col>
+                </Row>
             </Col>
 
             <Col className='d-flex justify-content-end'>
