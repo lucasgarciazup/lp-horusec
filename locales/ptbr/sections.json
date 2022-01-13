@@ -46,5 +46,7 @@
   "where_to_use_subtitle": "<h6>Localmente</h6><p>O Horusec possui uma CLI intuitiva e pensada para quem desenvolve, onde é possível realizar uma análise localmente da máquina.</p><h6>Esteira de CI/CD</h6><p>Adicione o Horusec nas esteiras de Continuous Integration ou Continuous Deploy para garantir uma camada de segurança no seu projeto e previnir que um código malicioso entre em produção.</p><h6>Extensões para IDE</h6><p>É muito comum utilizar uma IDE (Integrated Development Environment ou Ambiente de Desenvolvimento Integrado) com extensões e plugins para auxiliar no desenvolvimento. Realize análises através da própria extensão do Horusec e garanta velocidade nas suas entregas.</p>",
 
   "why_use_title": "Porque usar?",
-  "why_use_subtitle": "<p><strong>O Horusec promove a cultura do desenvolvimento seguro aplicando a lógica de Security by Design:</strong> traz segurança e garante que possíveis vulnerabilidades desconhecidas serão encontradas através de análise. </p> <p><strong>Melhora a sua experiência:</strong> <br> Garante a segurança dos projetos no processo de CI e CD e, assim, reduz os custos de correção de uma vulnerabilidade. </p>"
+  "why_use_subtitle": "<p><strong>O Horusec promove a cultura do desenvolvimento seguro aplicando a lógica de Security by Design:</strong> traz segurança e garante que possíveis vulnerabilidades desconhecidas serão encontradas através de análise. </p> <p><strong>Melhora a sua experiência:</strong> <br> Garante a segurança dos projetos no processo de CI e CD e, assim, reduz os custos de correção de uma vulnerabilidade. </p>",
+
+  "404_title": "Ops! Essa página foi morar na nuvem."
 }

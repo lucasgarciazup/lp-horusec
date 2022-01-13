@@ -9,8 +9,8 @@ import {
 } from "./styles"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"
-import banner from "../../../assets/animations/horus-animation.gif"
 import { ContributeButton, DownloadButton } from "../../../styles/buttons"
+import gif from '../../../assets/gifs/horus-cli.gif';
 
 const Welcome: React.FC = () => {
   const { t } = useTranslation()
@@ -33,7 +33,7 @@ const Welcome: React.FC = () => {
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Banner src={banner} />
+            <Banner src={gif} />
           </Col>
         </Row>
       </Container>

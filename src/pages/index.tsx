@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 
-import Default from "../templates/default"
+import { Template } from "../templates/default"
 import Welcome from "../sections/home/welcome"
 import TypesOfAnalysis from "../sections/home/typesOfAnalysis"
 import Languages from "../sections/home/languages"
@@ -16,7 +16,7 @@ import WhoUse from "../sections/home/whoUse"
 export default function Home({ data }) {
   const { t } = useTranslation()
   return (
-    <Default>
+    <Template>
       <Welcome />
       <TypesOfAnalysis />
       <Languages />
@@ -33,7 +33,7 @@ export default function Home({ data }) {
       </Container>
       <ManageFoundVulnerabilities />
       <WhoUse />
-    </Default>
+    </Template>
   )
 }
 

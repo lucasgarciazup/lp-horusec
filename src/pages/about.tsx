@@ -7,14 +7,14 @@ import WhereToUse from "../sections/about/whereToUse"
 import WhyUse from "../sections/about/whyUse"
 import { Section, TitlePage } from "../styles/layouts"
 
-import Default from "../templates/default"
+import { Template } from "../templates/default"
 import Button from "../components/Button"
 import { DocumentationButton, DownloadButton } from "../styles/buttons"
 import Info from "../sections/about/info"
 
 const pages: React.FC = () => {
   return (
-    <Default>
+    <Template>
       <TitlePage>
         <Container>
           <h1>Sobre o Horusec</h1>
@@ -27,7 +27,7 @@ const pages: React.FC = () => {
         <WhyUse />
         <Info />
       </Container>
-    </Default>
+    </Template>
   )
 }
 
