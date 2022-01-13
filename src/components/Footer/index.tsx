@@ -1,57 +1,79 @@
 import React from 'react';
-import { Copyright, List, Wrapper } from './styles';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { Col, Container, Row } from 'react-bootstrap';
+import { FooterContainer, Copyright, List, Topic } from './styles';
+import { Section } from '../../styles/layouts';
 
-// import { Container } from './styles';
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
+import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin';
+
 import opensource from '../../assets/logos/opensource.png';
 import zup from '../../assets/logos/zup.png';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();
     return (
-        <Wrapper>
-            <List>
-                <ul>
-                    <li>
-                        <img src={opensource} alt="Opensource logo" />
-                        <img src={zup} alt='Zup logo' />
-                    </li>
-                    <li>
-                        <h4>Horusec</h4>
-                        <ul>
+        <FooterContainer>
+            <Container>
+                <Row>
+                    <Col>
+                        <List>
+                            <li>
+                                <a href="https://opensource.zup.com.br/" target="_blank">
+                                    <img src={opensource} alt="Opensource logo" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://zup.com.br/" target="_blank">
+                                    <img src={zup} alt='Zup logo' />
+                                </a>
+                            </li>
+                        </List>
+                    </Col>
+                    <Col>
+                        <Topic>Horusec</Topic>
+                        <List>
                             <li>{t("footer_technologies")}</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>{t("footer_community")}</h4>
-                        <ul>
+                        </List>
+                    </Col>
+                    <Col>
+                        <Topic>{t("footer_community")}</Topic>
+                        <List>
                             <li>{t("footer_technologies")}</li>
                             <li>Blog</li>
-                            <li>Tech Radar</li>
+                            <li>
+                                <a href='https://opensource.zup.com.br/radar' target="_blank">Tech Radar</a>
+                            </li>
                             <li>{t("footer_events")}</li>
                             <li>{t("footer_privacy_policy")}</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>{t("footer_social_networks")}</h4>
-                        <ul>
-                            <li>Twitter</li>
-                            <li>Youtube</li>
-                            <li>Github</li>
-                            <li>Linkedin</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>{t("footer_who_we_are")}</h4>
-                        <ul>
+                        </List>
+                    </Col>
+                    <Col>
+                        <Topic>{t("footer_social_networks")}</Topic>
+                        <List>
+                            <li>
+                                <a><FaGithub/> Twitter</a></li>
+                            <li>
+                                <a><FaTwitter/> Youtube</a></li>
+                            <li>
+                                <a><FaLinkedin/> Github</a></li>
+                            <li>
+                                <a><FaYoutube/> Linkedin</a></li>
+                        </List>
+                    </Col>
+                    <Col>
+                        <Topic>{t("footer_who_we_are")}</Topic>
+                        <List>
                             <li>{t("footer_about_us")}</li>
                             <li>{t("footer_contact")}</li>
-                        </ul>
-                    </li>
-                </ul>
-            </List>
-            <Copyright>©Copyright 2021 Zup. {t("footer_copyright")}</Copyright>
-        </Wrapper>
+                        </List>
+                    </Col>
+                </Row>
+            </Container>
+            <Copyright>©Copyright {new Date().getFullYear() } Zup. {t("footer_copyright")}</Copyright>
+        </FooterContainer>
     );
 }
 

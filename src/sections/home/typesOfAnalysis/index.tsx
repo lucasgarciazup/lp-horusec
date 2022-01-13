@@ -33,7 +33,7 @@ const TypesOfAnalysis: React.FC = () => {
         <TitleSection>{t("type_of_analysis_title")}</TitleSection>
         <Row className="mt-5 justify-content-center">
           {cards.map(item => (
-            <Col>
+            <Col key={item.title}>
               <Card>
                 <CardIcon />
                 <CardTitle>{item.title}</CardTitle>

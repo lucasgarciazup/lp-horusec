@@ -1,52 +1,42 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.footer`
-    background: ${props => props.theme.colors.background };
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    padding: 32px 0;
+
+export const FooterContainer = styled.footer`
+    padding: 56px 0 32px;
+    background: ${props => props.theme.colors.background};
 `;
 
-export const List = styled.div`
-  width: 100%;
+export const Topic = styled.h4`
   font-family: Roboto;
   font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 0;
+`;
 
-  h4 {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 0;
-  }
-
-  li:first-child {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
+export const List = styled.ul`
+  width: 100%;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+  flex-wrap: wrap;
+  flex-direction: column;
   li {
-    font-weight: 400;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px;
     line-height: 24px;
+    color: #404659;
   }
-
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  
+  li > a {
+    color: #404659 !important;
+    text-decoration: none;
   }
-  li > ul {
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 8px;
-  }
+  
 `;
 
 export const Copyright = styled.p`
