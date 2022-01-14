@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
+import { withPrefix } from 'gatsby';
 
 const menuCss = css`
   padding: 24px 0 !important;
@@ -36,7 +37,7 @@ export const LangSelect = styled.div`
   }
 
   #nav-dropdown-languages::after {
-    content: url("icons/arrow-down.svg");
+    content: url(${() => withPrefix("icons/arrow-down.svg")});
     margin-left: 0.5em;
     vertical-align: 0;
     border: none;
