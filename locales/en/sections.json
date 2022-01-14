@@ -1,0 +1,59 @@
+{
+  "welcome_title": "",
+  "welcome_subtitle": "",
+
+  "type_of_analysis_title": "",
+  "type_of_analysis_about_title": "",
+  "type_of_analysis_subtitle": "",
+
+  "type_of_analysis_card_1_icon": "icons/check-shield.svg",
+  "type_of_analysis_card_1_title": "",
+  "type_of_analysis_card_1_caption": "",
+
+  "type_of_analysis_card_2_icon": "icons/shield-lock.svg",
+  "type_of_analysis_card_2_title": "",
+  "type_of_analysis_card_2_caption": "",
+
+  "type_of_analysis_card_3_icon": "icons/task-checklist.svg",
+  "type_of_analysis_card_3_title": "",
+  "type_of_analysis_card_3_caption": "",
+
+  "languages_title": "",
+  "languages_subtitle": "",
+
+  "projects_with_trusted_codes_title": "",
+  "projects_with_trusted_codes_subtitle": "",
+
+  "culture_of_safety_title": "",
+  "culture_of_safety_subtitle": "",
+
+  "assisted_development_title": "",
+  "assisted_development_subtitle": "",
+
+  "manage_found_vulnerabilities_title": "",
+  "manage_found_vulnerabilities_subtitle": "",
+
+  "about_title": "",
+
+  "who_use_title": "",
+
+  "about_horusec": "",
+
+  "what_is_it_title": " ",
+  "what_is_it_subtitle": "",
+
+  "how_it_works_title": "",
+  "how_it_works_subtitle": "",
+
+  "where_to_use_title": "",
+  "where_to_use_subtitle": "",
+
+  "why_use_title": "Porque usar?",
+  "why_use_subtitle": "",
+
+  "community_title": "",
+  "community_subtitle": "",
+
+  
+  "404_title": ""
+}

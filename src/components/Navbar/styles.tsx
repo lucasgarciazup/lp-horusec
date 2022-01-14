@@ -36,7 +36,7 @@ export const LangSelect = styled.div`
   }
 
   #nav-dropdown-languages::after {
-    content: url("/icons/arrow-down.svg");
+    content: url("icons/arrow-down.svg");
     margin-left: 0.5em;
     vertical-align: 0;
     border: none;

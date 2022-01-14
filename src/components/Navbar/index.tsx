@@ -5,7 +5,7 @@ import {
   NavDropdown,
   Nav,
 } from "react-bootstrap"
-
+import { withPrefix } from "gatsby"
 import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
@@ -42,9 +42,11 @@ const Navbar: React.FC = () => {
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src="/app.png" width="160px" height="auto" />
+          <img src={ withPrefix("/") + "app.png" } width="160px" height="auto" />
         </Link>
+
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
+        
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto w-100 justify-content-around">
             {menus.map((menu, index) => (
