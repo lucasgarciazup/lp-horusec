@@ -7,6 +7,7 @@
 const siteMetadata = require("./config/metadata")
 
 module.exports = {
+  pathPrefix: "/lp-horusec",
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,

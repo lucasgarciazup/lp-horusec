@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       target: "_blank",
     },
   ]
-console.log(window.location.pathname);
+  
   return (
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
@@ -58,6 +58,7 @@ console.log(window.location.pathname);
                   {menu.title}
                 </MenuLinkExternal>
               ) : (
+                typeof window !== "undefined" ? (
                 <MenuLink
                   key={index.toString()}
                   to={menu.link}
@@ -65,8 +66,9 @@ console.log(window.location.pathname);
                   {...(menu.target ? { target: "_blank" } : "")}
                   partiallyActive
                 >
-                  {menu.title}
+                {menu.title}
                 </MenuLink>
+                ) : null
               )
             ))}
           </Nav>
