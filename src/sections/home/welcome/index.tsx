@@ -1,19 +1,23 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 
-import {
-  Title,
-  SubTitle,
-  Section,
-  Banner,
-} from "./styles"
+import { Title, SubTitle, Section, Banner } from "./styles"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { ContributeButton, DownloadButton } from "../../../styles/buttons"
-import gif from '../../../assets/gifs/horus-cli.gif';
+import { graphql, useStaticQuery } from "gatsby"
 
 const Welcome: React.FC = () => {
   const { t } = useTranslation()
+
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(name: { eq: "horusec-cli" }) {
+        name
+        publicURL
+      }
+    }
+  `)
 
   return (
     <Section id="welcome">
@@ -33,7 +37,7 @@ const Welcome: React.FC = () => {
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Banner src={gif} />
+            <Banner src={image?.publicURL} fluid alt={image?.name} />
           </Col>
         </Row>
       </Container>

@@ -5,28 +5,27 @@ import HowItWorks from "../sections/about/howItWorks"
 import WhatIsIt from "../sections/about/whatIsIt"
 import WhereToUse from "../sections/about/whereToUse"
 import WhyUse from "../sections/about/whyUse"
-import { Section, TitlePage } from "../styles/layouts"
-
+import { TitlePage } from "../styles/layouts"
 import { Template } from "../templates/default"
-import Button from "../components/Button"
-import { DocumentationButton, DownloadButton } from "../styles/buttons"
 import Info from "../sections/about/info"
+import { useTranslation } from "gatsby-plugin-react-i18next"
+import TypesOfAnalysis from "../sections/about/typesOfAnalysis"
 
 const pages: React.FC = () => {
+  const { t } = useTranslation()
   return (
     <Template>
       <TitlePage>
         <Container>
-          <h1>Sobre o Horusec</h1>
+          <h1>{t("about_title")}</h1>
         </Container>
       </TitlePage>
-      <Container>
-        <WhatIsIt />
-        <HowItWorks />
-        <WhereToUse />
-        <WhyUse />
-        <Info />
-      </Container>
+      <WhatIsIt />
+      <HowItWorks />
+      <TypesOfAnalysis />
+      <WhereToUse />
+      <WhyUse />
+      <Info />
     </Template>
   )
 }

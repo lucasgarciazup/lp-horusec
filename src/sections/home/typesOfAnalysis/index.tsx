@@ -34,7 +34,7 @@ const TypesOfAnalysis: React.FC = () => {
           {cards.map(item => (
             <Col key={item.title}>
               <Card>
-                <CardIcon />
+                <CardIcon src={item.icon} height={30} width="auto" />
                 <CardTitle>{item.title}</CardTitle>
                 <CardCaption>{item.caption}</CardCaption>
               </Card>

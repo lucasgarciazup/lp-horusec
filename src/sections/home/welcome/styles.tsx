@@ -1,3 +1,4 @@
+import { Image } from "react-bootstrap"
 import styled from "styled-components"
 
 export const Section = styled.section`
@@ -24,7 +25,7 @@ export const SubTitle = styled.h2`
   margin-bottom: 32px;
 `
 
-export const Banner = styled.img`
+export const Banner = styled(Image)`
   box-shadow: 0px 4px 32px -8px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
 

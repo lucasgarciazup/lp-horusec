@@ -79,7 +79,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/animations`,
+        path: `${__dirname}/src/assets/`,
         name: `assets`,
       },
     },

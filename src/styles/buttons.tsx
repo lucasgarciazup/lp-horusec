@@ -8,7 +8,7 @@ interface ButtonInterface {
   width?: string
 }
 
-export const DownloadButton: React.FC<ButtonInterface> = (props) => {
+export const DownloadButton: React.FC<ButtonInterface> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -21,7 +21,7 @@ export const DownloadButton: React.FC<ButtonInterface> = (props) => {
   )
 }
 
-export const ContributeButton: React.FC<ButtonInterface> = (props) => {
+export const ContributeButton: React.FC<ButtonInterface> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -34,7 +34,7 @@ export const ContributeButton: React.FC<ButtonInterface> = (props) => {
   )
 }
 
-export const DocumentationButton: React.FC<ButtonInterface> = (props) => {
+export const DocumentationButton: React.FC<ButtonInterface> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -47,7 +47,7 @@ export const DocumentationButton: React.FC<ButtonInterface> = (props) => {
   )
 }
 
-export const AllAboutButton: React.FC<ButtonInterface> = (props) => {
+export const AllAboutButton: React.FC<ButtonInterface> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -59,4 +59,3 @@ export const AllAboutButton: React.FC<ButtonInterface> = (props) => {
     </Button>
   )
 }
-

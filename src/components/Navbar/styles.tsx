@@ -3,18 +3,6 @@ import styled from "styled-components"
 
 import arrowDown from "../../assets/icons/arrow-down.svg"
 
-interface MenuActiveInterface {
-  active: boolean
-}
-
-export const MenuActive = styled.div<MenuActiveInterface>`
-  background: ${props => (props.active ? "#FF6D00" : "none")};
-  border-radius: 20px;
-  height: 4px;
-  width: 80%;
-  margin: 0 auto;
-`
-
 export const MenuLink = styled(Link)`
   padding: 24px 0 !important;
   font-family: Montserrat;

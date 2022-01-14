@@ -4,13 +4,11 @@ import {
   Container,
   NavDropdown,
   Nav,
-  Row,
-  Col,
 } from "react-bootstrap"
 
 import logo from "../../assets/logos/app.png"
 
-import { LangSelect, MenuActive, MenuLink, MenuWrapper } from "./styles"
+import { LangSelect, MenuLink } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 
@@ -25,7 +23,11 @@ const Navbar: React.FC = () => {
     },
     {
       title: t("navbar_docs"),
-      link: "/docs",
+      link:
+        language === "en"
+          ? "https://docs.horusec.io/docs/overview/"
+          : "https://docs.horusec.io/docs/pt-br/overview/",
+      target: "_blank",
     },
     {
       title: t("navbar_community"),
@@ -39,7 +41,7 @@ const Navbar: React.FC = () => {
   ]
 
   return (
-    <NavbarBS className="shadow-sm" expand="lg">
+    <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
         <Link to="/" className="navbar-brand">
           <img src={logo} width="160px" height="auto" />
