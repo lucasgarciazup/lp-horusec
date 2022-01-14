@@ -7,14 +7,13 @@ import { Section, TitleSection } from "../styles/layouts"
 import { AllAboutButton } from "../styles/buttons"
 import { Template } from "../templates/default"
 
-import error404 from "../assets/error_404.svg"
-const NotFound: React.FC = () => {
+export default function Page404 () {
   const { t } = useTranslation()
   return (
     <Template>
       <Section dark>
         <Container>
-          <Image className="d-block m-auto" src={error404} />
+          {/* // <Image className="d-block m-auto" src={error404} /> */}
           <Stack
             className="align-items-center my-5 m-auto"
             style={{ width: "40%" }}
@@ -27,8 +26,6 @@ const NotFound: React.FC = () => {
     </Template>
   )
 }
-
-export default NotFound
 
 export const query = graphql`
   query ($language: String!) {

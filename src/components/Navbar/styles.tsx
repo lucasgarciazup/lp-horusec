@@ -1,9 +1,7 @@
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-import arrowDown from "../../assets/icons/arrow-down.svg"
-
-export const MenuLink = styled(Link)`
+const menuCss = css`
   padding: 24px 0 !important;
   font-family: Montserrat;
   font-style: normal;
@@ -16,6 +14,13 @@ export const MenuLink = styled(Link)`
   &.active {
     border-bottom: solid #ff6d00 4px;
   }
+`;
+export const MenuLink = styled(Link)`
+  ${menuCss}
+`
+
+export const MenuLinkExternal = styled("a")`
+  ${menuCss}
 `
 
 export const LangSelect = styled.div`
@@ -31,7 +36,7 @@ export const LangSelect = styled.div`
   }
 
   #nav-dropdown-languages::after {
-    content: url(${arrowDown});
+    content: url("/icons/arrow-down.svg");
     margin-left: 0.5em;
     vertical-align: 0;
     border: none;

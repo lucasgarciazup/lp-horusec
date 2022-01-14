@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Col, Container, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import HowItWorks from "../sections/about/howItWorks"
 import WhatIsIt from "../sections/about/whatIsIt"
 import WhereToUse from "../sections/about/whereToUse"
 import WhyUse from "../sections/about/whyUse"
+import Info from "../sections/about/info"
 import { TitlePage } from "../styles/layouts"
 import { Template } from "../templates/default"
-import Info from "../sections/about/info"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import TypesOfAnalysis from "../sections/about/typesOfAnalysis"
 
-const pages: React.FC = () => {
+export default function About() {
   const { t } = useTranslation()
   return (
     <Template>
@@ -29,8 +29,6 @@ const pages: React.FC = () => {
     </Template>
   )
 }
-
-export default pages
 
 export const query = graphql`
   query ($language: String!) {

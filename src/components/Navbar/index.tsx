@@ -6,9 +6,7 @@ import {
   Nav,
 } from "react-bootstrap"
 
-import logo from "../../assets/logos/app.png"
-
-import { LangSelect, MenuLink } from "./styles"
+import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 
@@ -39,27 +37,37 @@ const Navbar: React.FC = () => {
       target: "_blank",
     },
   ]
-
+console.log(window.location.pathname);
   return (
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={logo} width="160px" height="auto" />
+          <img src="/app.png" width="160px" height="auto" />
         </Link>
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto w-100 justify-content-around">
             {menus.map((menu, index) => (
-              <MenuLink
-                key={index.toString()}
-                className="nav-link"
-                to={menu.link}
-                {...(menu.target ? { target: "_blank" } : "")}
-                activeClassName="active"
-                partiallyActive
-              >
-                {menu.title}
-              </MenuLink>
+              menu.link.includes("http") ? (
+                <MenuLinkExternal
+                  key={index.toString()}
+                  href={menu.link}
+                  className="nav-link"
+                  {...(menu.target ? { target: "_blank" } : "")}
+                >
+                  {menu.title}
+                </MenuLinkExternal>
+              ) : (
+                <MenuLink
+                  key={index.toString()}
+                  to={menu.link}
+                  {...{ className: window.location.pathname.includes(menu.link) ? "nav-link active" : "nav-link" }}
+                  {...(menu.target ? { target: "_blank" } : "")}
+                  partiallyActive
+                >
+                  {menu.title}
+                </MenuLink>
+              )
             ))}
           </Nav>
           <Nav>

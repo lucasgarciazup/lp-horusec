@@ -6,15 +6,15 @@
   "type_of_analysis_about_title": "Tipos de análise",
   "type_of_analysis_subtitle": "O Horusec realiza 3 tipos de análises de desempenho para identificar se existe alguma falha de segurança:",
 
-  "type_of_analysis_card_1_icon": "icons/check-shield.svg",
+  "type_of_analysis_card_1_icon": "/icons/check-shield.svg",
   "type_of_analysis_card_1_title": "Teste estático de segurança de aplicativos (SAST)",
   "type_of_analysis_card_1_caption": "Analisa vulnerabilidades de Projetos Web, App e Desktop, Processos de qualidade e Infraestrutura como código (IaC).",
 
-  "type_of_analysis_card_2_icon": "icons/shield-lock.svg",
+  "type_of_analysis_card_2_icon": "/icons/shield-lock.svg",
   "type_of_analysis_card_2_title": "Vazamentos",
   "type_of_analysis_card_2_caption": "Investiga arquivos em busca de possíveis vazamentos de credenciais, chaves privadas ou senhas codificadas.",
 
-  "type_of_analysis_card_3_icon": "icons/task-checklist.svg",
+  "type_of_analysis_card_3_icon": "/icons/task-checklist.svg",
   "type_of_analysis_card_3_title": "Auditoria de dependência",
   "type_of_analysis_card_3_caption": "Verifica as dependências do projeto para buscar problemas de segurança em bibliotecas.",
 
@@ -51,5 +51,9 @@
   "why_use_title": "Porque usar?",
   "why_use_subtitle": "<p><strong>O Horusec promove a cultura do desenvolvimento seguro aplicando a lógica de Security by Design:</strong> traz segurança e garante que possíveis vulnerabilidades desconhecidas serão encontradas através de análise. </p> <p><strong>Melhora a sua experiência:</strong> <br> Garante a segurança dos projetos no processo de CI e CD e, assim, reduz os custos de correção de uma vulnerabilidade. </p>",
 
+  "community_title": "Contribua com o Horusec",
+  "community_subtitle": "Faça parte de uma comunidade que constrói produtos inovadores na era cloud-native.",
+
+  
   "404_title": "Ops! Essa página foi morar na nuvem."
 }
