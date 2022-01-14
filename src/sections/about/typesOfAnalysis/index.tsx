@@ -2,8 +2,8 @@ import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
-import { Card, CardCaption, CardIcon, CardTitle } from "./styles"
 import { CaptionSection, Section, TitleSection } from "../../../styles/layouts"
+import { withPrefix } from 'gatsby'
 
 const TypesOfAnalysis: React.FC = () => {
   const { t } = useTranslation()
@@ -36,7 +36,7 @@ const TypesOfAnalysis: React.FC = () => {
         <Row className="mt-5 justify-content-center">
           {cards.map(item => (
             <Col key={item.title} className="text-center">
-              <img src={item.icon} height={70} width="auto" className="mb-3" />
+              <img src={withPrefix(item.icon)} height={70} width="auto" className="mb-3" />
               <h2 className="mx-auto mb-3">{item.title}</h2>
               <p>{item.caption}</p>
             </Col>

@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#ef4123`,
         display: `standalone`,
-        icon: `static/app.png`,
+        icon: `static/favicon.png`,
       },
     },
     {

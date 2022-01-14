@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={ withPrefix("/") + "app.png" } width="160px" height="auto" />
+          <img src={ withPrefix("app.png") } width="160px" height="auto" />
         </Link>
 
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
