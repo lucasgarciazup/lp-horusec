@@ -27,27 +27,35 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-1b672f1e0e72ad46ccb6.js"
+    "url": "webpack-runtime-e45157818a655123bc6b.js"
   },
   {
     "url": "framework-ec3d15afe0a3f6f573ef.js"
   },
   {
-    "url": "app-1a2d7003ea958ef0f652.js"
+    "url": "app-c866d748423bcf35dee6.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d1439e248171c04c54c48da6bbea343d"
+    "revision": "aafd79eb118d5fefd285bb1898fe699f"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-7eb679c6935e8f83e242.js"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "b5b6b67f54e610aa8f656a4fa2ca9e44"
+  },
+  {
+    "url": "page-data/app-data.json",
+    "revision": "58bfd7b1fcd2b314602d66c634c3f4e4"
   },
   {
     "url": "polyfill-c9ca0462efb8ab6aa30b.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "c95298940134ee99381312b76c38623e"
+    "revision": "e6333a17de252120aafa1f0486fd6d86"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -152,12 +160,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/lp-horusec/lp-horusec`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-1a2d7003ea958ef0f652.js`))) {
+  if (!resources || !(await caches.match(`/lp-horusec/lp-horusec/app-c866d748423bcf35dee6.js`))) {
     return await fetch(event.request)
   }
 
@@ -170,7 +178,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/lp-horusec/lp-horusec/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
