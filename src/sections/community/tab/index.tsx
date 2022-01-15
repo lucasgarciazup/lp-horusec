@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Tabs, Tab, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Tab, Container } from 'react-bootstrap';
 import { Section } from '../../../styles/layouts';
-
-import { navigate } from 'gatsby'
 import { TabStyled } from './styles';
+import Team from '../tabs/team';
 
 export default function BodyCommunity() {
   const tabs = [
@@ -24,7 +23,7 @@ export default function BodyCommunity() {
   const [key, setKey] = useState(tabs[0].key);
 
   return (
-    <Section>
+    <Section className='h-100' style={{ minHeight: '70vh'}}>
       <Container>
       <TabStyled
        id="community-tabs"
@@ -39,7 +38,7 @@ export default function BodyCommunity() {
           <h1>sadas</h1>
         </Tab>
         <Tab eventKey={tabs[2].key} title={tabs[2].title}>
-          <h1>eeee</h1>
+          <Team />
         </Tab>
       </TabStyled>
       </Container>
