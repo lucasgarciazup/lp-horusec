@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4C0 1.79086 1.79086 0 4 0H44C46.2091 0 48 1.79086 48 4V44C48 46.2091 46.2091 48 44 48H4C1.79086 48 0 46.2091 0 44V4Z" fill="#FFF3EB"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.3372 16.3213C29.5965 16.3213 34.6706 14.6021 34.6706 12.4813C34.6706 10.3605 29.5965 8.6413 23.3372 8.6413C17.078 8.6413 12.0039 10.3605 12.0039 12.4813C12.0039 14.6021 17.078 16.3213 23.3372 16.3213Z" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.6667 17.6C34.6667 19.7209 29.592 21.44 23.3333 21.44C17.0747 21.44 12 19.7222 12 17.6" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.6667 22.7201C34.6667 24.8411 29.592 26.5601 23.3333 26.5601C17.0747 26.5601 12 24.8423 12 22.7201" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.6667 12.48V27.84C34.6667 29.9609 29.592 31.68 23.3333 31.68C17.0747 31.68 12 29.9622 12 27.84V12.48" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 38.0813H32" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.0039 31.6813V38.0813" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.66659 37.44C9.48249 37.44 9.33325 37.5833 9.33325 37.76C9.33325 37.9367 9.48249 38.08 9.66659 38.08C9.85068 38.08 9.99992 37.9367 9.99992 37.76C9.99992 37.5833 9.85068 37.44 9.66659 37.44" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.9998 37.44C12.8157 37.44 12.6665 37.5833 12.6665 37.76C12.6665 37.9367 12.8157 38.08 12.9998 38.08C13.1839 38.08 13.3332 37.9367 13.3332 37.76C13.3332 37.5833 13.1839 37.44 12.9998 37.44" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.9998 37.44C34.8157 37.44 34.6665 37.5833 34.6665 37.76C34.6665 37.9367 34.8157 38.08 34.9998 38.08C35.1839 38.08 35.3332 37.9367 35.3332 37.76C35.3332 37.5833 35.1839 37.44 34.9998 37.44" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38.3333 37.44C38.1492 37.44 38 37.5833 38 37.76C38 37.9367 38.1492 38.08 38.3333 38.08C38.5174 38.08 38.6667 37.9367 38.6667 37.76C38.6667 37.5833 38.5174 37.44 38.3333 37.44" stroke="#FF6D00" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
