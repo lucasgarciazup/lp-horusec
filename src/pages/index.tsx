@@ -1,5 +1,5 @@
 import React from "react"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { Helmet, useTranslation } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 
 import { Template } from "../templates/default"

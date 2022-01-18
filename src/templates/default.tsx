@@ -1,13 +1,24 @@
-import React from "react"
+import React, { RefCallback } from "react"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { GlobalStyle } from "../styles/global"
 
 import "bootstrap/dist/css/bootstrap.min.css"
+import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
 
-export function Template({ children }) {
+interface TemplateInterface {
+  title?: string
+}
+
+export const Template: React.FC<TemplateInterface> = ({ title = '', children}) => {
+  const { site: { siteMetadata } } = useStaticQuery(query)
+  const titlePage = [siteMetadata.title]
+  if (title) titlePage.unshift(title)
+
   return (
     <>
+      <Helmet title={titlePage.join(" | ")} description={siteMetadata.description}  />
       <GlobalStyle />
       <Navbar />
       {children}
@@ -15,3 +26,15 @@ export function Template({ children }) {
     </>
   )
 }
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        title,
+        siteUrl,
+        description,
+      }
+    }
+  }
+`

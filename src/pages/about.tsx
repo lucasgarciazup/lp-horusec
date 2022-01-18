@@ -14,7 +14,7 @@ import TypesOfAnalysis from "../sections/about/typesOfAnalysis"
 export default function About() {
   const { t } = useTranslation()
   return (
-    <Template>
+    <Template title={t("about_title")}>
       <TitlePage>
         <Container>
           <h1>{t("about_title")}</h1>

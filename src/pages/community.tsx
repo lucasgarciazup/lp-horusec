@@ -9,7 +9,7 @@ export default function Community() {
   const { t } = useTranslation()
 
   return (
-    <Template>
+    <Template title={t("community_title")}>
       <Header />
       <Tab />
     </Template>

@@ -12,7 +12,7 @@ export default function Page404({ data }) {
   const { image } = data;
   
   return (
-    <Template>
+    <Template title={t("404_title")}>
       <Section dark>
         <Container>
           <Image className="d-block m-auto" src={withPrefix(image?.publicURL)} title={image?.name} />
