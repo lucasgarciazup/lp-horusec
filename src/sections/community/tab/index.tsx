@@ -4,6 +4,7 @@ import { Section } from "../../../styles/layouts"
 import { TabStyled } from "./styles"
 import Team from "../tabs/team"
 import Videos from "../tabs/videos"
+import Versions from '../tabs/versions'
 
 export default function TabCommunity() {
   const tabs = [
@@ -21,10 +22,10 @@ export default function TabCommunity() {
     },
   ]
 
-  const [key, setKey] = useState(tabs[1].key)
+  const [key, setKey] = useState(tabs[0].key)
 
   return (
-    <Section className="h-100">
+    <Section className="h-100" style={{ background: "#FCFCFC" }}>
       <Container>
         <TabStyled
           id="community-tabs"
@@ -33,7 +34,7 @@ export default function TabCommunity() {
           className="mb-3"
         >
           <Tab eventKey={tabs[0].key} title={tabs[0].title}>
-            <h1 className="testee">lol</h1>
+            <Versions />
           </Tab>
           <Tab
             eventKey={tabs[1].key}

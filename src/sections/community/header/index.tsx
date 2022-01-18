@@ -46,14 +46,18 @@ export default function HeaderCommunity() {
   return (
     <SectionStyled dark backgroundImage={background?.publicURL}>
       <Container>
-        <Row>
+        <Row className="gy-5">
           <Col>
-            <Title>{t("community_title")}</Title>
+            <Title className='text-center text-lg-start'>{t("community_title")}</Title>
             <SubTitleSection>{t("community_subtitle")}</SubTitleSection>
-            <ContributeButton highlight width="30%" />
+            <Row>
+              <Col className="col-12 col-md-8 col-lg-5 mx-auto mx-lg-0">
+                <ContributeButton highlight />
+              </Col>
+            </Row>
           </Col>
           <Col>
-            <Img fixed={image?.childImageSharp?.fixed} alt={image?.name} />
+            <Img fixed={image?.childImageSharp?.fixed} alt={image?.name} className="d-flex mx-auto" />
           </Col>
         </Row>
       </Container>

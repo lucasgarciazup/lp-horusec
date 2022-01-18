@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -86,6 +87,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/assets/`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/versions/`,
+        name: `versions`,
       },
     },
     {
