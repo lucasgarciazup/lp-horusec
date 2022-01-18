@@ -2,8 +2,14 @@ import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { Section, SubTitleSection, TitleSection } from "../../../styles/layouts"
-import { graphql, Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
+import { DocumentationButton } from '../../../styles/buttons'
+import styled from 'styled-components'
+
+const StyledDocumentationButton = styled(DocumentationButton).attrs({
+  className: "mx-auto mx-lg-0"
+})``;
 
 const ManageFoundVulnerabilities: React.FC = () => {
   const { t } = useTranslation()
@@ -26,26 +32,24 @@ const ManageFoundVulnerabilities: React.FC = () => {
   return (
     <Section>
       <Container>
-        <Row>
-          <Col className="col-5">
+        <Row className='gy-5 justify-content-center align-items-center'>
+          <Col className="col-10 col-lg-5">
             <Img
               fluid={image?.childImageSharp?.fluid}
-              className="mx-auto d-block mb-5"
+              loading="lazy"
+              alt={image.name}
+              className="d-flex mx-auto w-100 h-100"
+              objectFit="contain"
             />
           </Col>
-          <Col className="col-6">
-            <TitleSection className="text-start">
+          <Col className="col-12 col-lg-7">
+            <TitleSection className="text-center text-lg-start">
               {t("manage_found_vulnerabilities_title")}
             </TitleSection>
-            <SubTitleSection className="text-start">
+            <SubTitleSection className="text-center text-lg-start">
               {t("manage_found_vulnerabilities_subtitle")}
             </SubTitleSection>
-            <a
-              className="text-decoration-none"
-              href="https://docs.horusec.io/docs/pt-br/overview/"
-            >
-              {t("button_documentation")}
-            </a>
+            <StyledDocumentationButton highlight width='50%' />
           </Col>
         </Row>
       </Container>

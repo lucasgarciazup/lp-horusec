@@ -7,12 +7,24 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
-
-import opensource from "../../assets/logos/opensource.png"
-import zup from "../../assets/logos/zup.png"
+import { useStaticQuery, graphql, withPrefix } from 'gatsby'
 
 const Footer: React.FC = () => {
   const { t } = useTranslation()
+
+  const { opensource, zup } = useStaticQuery(graphql`
+    query {
+      opensource: file(name: { eq: "opensource" }) {
+        name
+        publicURL
+      },
+      zup: file(name: { eq: "zup" }) {
+        name
+        publicURL
+      }
+    }
+  `)
+
   return (
     <FooterContainer>
       <Container>
@@ -21,12 +33,12 @@ const Footer: React.FC = () => {
             <List>
               <li>
                 <a href="https://opensource.zup.com.br/" target="_blank">
-                  <img src={opensource} alt="Opensource logo" />
+                  <img src={withPrefix(opensource?.publicURL)} alt="Opensource logo" />
                 </a>
               </li>
               <li>
                 <a href="https://zup.com.br/" target="_blank">
-                  <img src={zup} alt="Zup logo" />
+                  <img src={withPrefix(zup?.publicURL)} alt="Zup logo" />
                 </a>
               </li>
             </List>

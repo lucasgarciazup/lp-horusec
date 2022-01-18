@@ -98,7 +98,9 @@ const Videos: React.FC = () => {
               height: "50vh",
             }}
           >
-            <Spinner animation="grow" role="status" />
+            <Spinner animation="grow" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
           </Stack>
         ) : (
           videos.items.map((item, index) => (

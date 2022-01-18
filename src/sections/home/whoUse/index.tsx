@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { Section, TitleSection } from "../../../styles/layouts"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 
 const WhoUse: React.FC = () => {
   const { t } = useTranslation()
@@ -21,6 +21,7 @@ const WhoUse: React.FC = () => {
           name
           childImageSharp {
             fixed {
+              aspectRatio,
               ...GatsbyImageSharpFixed_tracedSVG
             }
           }
@@ -33,14 +34,15 @@ const WhoUse: React.FC = () => {
     <Section>
       <Container>
         <TitleSection className="mb-5">{t("who_use_title")}</TitleSection>
-        <Row className="row-cols-3 justify-content-center align-items-center">
+        <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-4 gy-5 justify-content-center align-items-center" >
           {images.map(image => (
-            <Col className="col-3 mb-5" key={image.id}>
+            <Col key={image.id} style={{ height: 100 }}>
               <Img
                 loading="lazy"
                 fixed={image.childImageSharp.fixed}
                 alt={image.name}
-                className="d-flex mx-auto"
+                className="d-flex mx-auto w-75 h-100"
+                objectFit="contain"
               />
             </Col>
           ))}
