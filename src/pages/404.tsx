@@ -7,7 +7,7 @@ import { Section, TitleSection } from "../styles/layouts"
 import { AllAboutButton } from "../styles/buttons"
 import { Template } from "../templates/default"
 
-export default function Page404 () {
+export default function Page404() {
   const { t } = useTranslation()
   return (
     <Template>

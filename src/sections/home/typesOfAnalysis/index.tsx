@@ -4,7 +4,7 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { Card, CardCaption, CardIcon, CardTitle } from "./styles"
 import { Section, TitleSection } from "../../../styles/layouts"
-import { withPrefix } from 'gatsby'
+import { withPrefix } from "gatsby"
 
 const TypesOfAnalysis: React.FC = () => {
   const { t } = useTranslation()
@@ -35,7 +35,11 @@ const TypesOfAnalysis: React.FC = () => {
           {cards.map(item => (
             <Col key={item.title}>
               <Card>
-                <CardIcon src={withPrefix(item.icon)} height={30} width="auto" />
+                <CardIcon
+                  src={withPrefix(item.icon)}
+                  height={30}
+                  width="auto"
+                />
                 <CardTitle>{item.title}</CardTitle>
                 <CardCaption>{item.caption}</CardCaption>
               </Card>

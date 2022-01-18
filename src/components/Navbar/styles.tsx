@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
-import { withPrefix } from 'gatsby';
+import { withPrefix } from "gatsby"
 
 const menuCss = css`
   padding: 24px 0 !important;
@@ -15,7 +15,7 @@ const menuCss = css`
   &.active {
     border-bottom: solid #ff6d00 4px;
   }
-`;
+`
 export const MenuLink = styled(Link)`
   ${menuCss}
 `

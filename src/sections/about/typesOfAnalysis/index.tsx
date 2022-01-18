@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { CaptionSection, Section, TitleSection } from "../../../styles/layouts"
-import { withPrefix } from 'gatsby'
+import { withPrefix } from "gatsby"
 
 const TypesOfAnalysis: React.FC = () => {
   const { t } = useTranslation()
@@ -34,9 +34,14 @@ const TypesOfAnalysis: React.FC = () => {
           {t("type_of_analysis_subtitle")}
         </CaptionSection>
         <Row className="mt-5 justify-content-center">
-          {cards.map(item => (
-            <Col key={item.title} className="text-center">
-              <img src={withPrefix(item.icon)} height={70} width="auto" className="mb-3" />
+          {cards.map((item, index) => (
+            <Col key={index.toString()} className="text-center">
+              <img
+                src={withPrefix(item.icon)}
+                height={70}
+                width="auto"
+                className="mb-3"
+              />
               <h2 className="mx-auto mb-3">{item.title}</h2>
               <p>{item.caption}</p>
             </Col>

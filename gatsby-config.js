@@ -6,8 +6,12 @@
 
 const siteMetadata = require("./config/metadata")
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
-  pathPrefix: "/lp-horusec",  
+  pathPrefix: "/lp-horusec",
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,

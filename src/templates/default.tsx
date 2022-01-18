@@ -8,10 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css"
 export function Template({ children }) {
   return (
     <>
+      <GlobalStyle />
       <Navbar />
       {children}
       <Footer />
-      <GlobalStyle />
     </>
   )
 }

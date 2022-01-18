@@ -13,8 +13,9 @@ import AssistedDevelopment from "../sections/home/assistedDevelopment"
 import ManageFoundVulnerabilities from "../sections/home/manageFoundVulnerabilities"
 import WhoUse from "../sections/home/whoUse"
 
-export default function Home({ data }) {
+export default function Home() {
   const { t } = useTranslation()
+
   return (
     <Template>
       <Welcome />

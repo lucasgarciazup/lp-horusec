@@ -9,10 +9,12 @@ import { withPrefix } from "gatsby"
 import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
+import { globalHistory } from "@reach/router"
 
 const Navbar: React.FC = () => {
   const { language, languages, changeLanguage } = useI18next()
   const { t } = useTranslation()
+  const { location } = globalHistory
 
   const menus = [
     {
@@ -37,19 +39,19 @@ const Navbar: React.FC = () => {
       target: "_blank",
     },
   ]
-  
+
   return (
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={ withPrefix("app.png") } width="160px" height="auto" />
+          <img src={withPrefix("app.png")} width="160px" height="auto" />
         </Link>
 
         <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
-        
+
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto w-100 justify-content-around">
-            {menus.map((menu, index) => (
+            {menus.map((menu, index) =>
               menu.link.includes("http") ? (
                 <MenuLinkExternal
                   key={index.toString()}
@@ -60,19 +62,19 @@ const Navbar: React.FC = () => {
                   {menu.title}
                 </MenuLinkExternal>
               ) : (
-                typeof window !== "undefined" ? (
                 <MenuLink
                   key={index.toString()}
                   to={menu.link}
-                  {...{ className: window.location.pathname.includes(menu.link) ? "nav-link active" : "nav-link" }}
+                  className={`nav-link ${withPrefix(menu.link)} ${
+                    location?.pathname.includes(menu.link) ? "active" : ""
+                  }`}
+                  activeClassName="active"
                   {...(menu.target ? { target: "_blank" } : "")}
-                  partiallyActive
                 >
-                {menu.title}
+                  {menu.title}
                 </MenuLink>
-                ) : null
               )
-            ))}
+            )}
           </Nav>
           <Nav>
             <LangSelect>
