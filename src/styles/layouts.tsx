@@ -1,8 +1,5 @@
 import styled from "styled-components"
-
-interface SectionInterface {
-  dark?: true
-}
+import { SectionInterface } from "../interfaces/section.interface";
 
 export const Section = styled.section<SectionInterface>`
   padding: 56px 0;

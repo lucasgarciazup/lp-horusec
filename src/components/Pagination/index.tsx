@@ -8,10 +8,7 @@ import { PaginationInterface } from "../../interfaces/pagination.interface"
 
 const CustomPerPage = React.forwardRef(
   (props: DropdownToggleProps, ref: React.Ref<HTMLDivElement>) => (
-    <PerPage ref={ref} {...props}>
-      {" "}
-      {props.children}{" "}
-    </PerPage>
+    <PerPage ref={ref} {...props}>{props.children}</PerPage>
   )
 )
 

@@ -6,10 +6,7 @@ import { GlobalStyle } from "../styles/global"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-
-interface TemplateInterface {
-  title?: string
-}
+import { TemplateInterface } from '../interfaces/template.interface';
 
 export const Template: React.FC<TemplateInterface> = ({ title = '', children}) => {
   const { site: { siteMetadata } } = useStaticQuery(query)

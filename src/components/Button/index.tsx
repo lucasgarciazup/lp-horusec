@@ -1,11 +1,6 @@
 import React from "react"
 import { ButtonContainer } from "./styles"
-
-export interface ButtonInterface {
-  highlight?: boolean
-  width?: string
-  children: string
-}
+import { ButtonInterface } from '../../interfaces/button.interface'
 
 const Button: React.FC<
   ButtonInterface & React.AnchorHTMLAttributes<HTMLAnchorElement>

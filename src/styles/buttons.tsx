@@ -1,14 +1,9 @@
 import React from "react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Button from "../components/Button"
+import { ButtonInterface  } from '../interfaces/button.interface'
 
-// import { Container } from './styles';
-interface ButtonInterface {
-  highlight?: boolean
-  width?: string
-}
-
-export const DownloadButton: React.FC<ButtonInterface> = props => {
+export const DownloadButton: React.FC<Omit<ButtonInterface, "children">> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -21,7 +16,7 @@ export const DownloadButton: React.FC<ButtonInterface> = props => {
   )
 }
 
-export const ContributeButton: React.FC<ButtonInterface> = props => {
+export const ContributeButton: React.FC<Omit<ButtonInterface, "children">> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -34,7 +29,7 @@ export const ContributeButton: React.FC<ButtonInterface> = props => {
   )
 }
 
-export const DocumentationButton: React.FC<ButtonInterface> = props => {
+export const DocumentationButton: React.FC<Omit<ButtonInterface, "children">> = props => {
   const { t } = useTranslation()
   return (
     <Button
@@ -47,7 +42,7 @@ export const DocumentationButton: React.FC<ButtonInterface> = props => {
   )
 }
 
-export const AllAboutButton: React.FC<ButtonInterface> = props => {
+export const AllAboutButton: React.FC<Omit<ButtonInterface, "children">> = props => {
   const { t } = useTranslation()
   return (
     <Button

@@ -1,26 +1,11 @@
+import React from "react"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import { Col, Container, Row, Stack } from "react-bootstrap"
-import Img from "gatsby-image"
+import { Col, Container, Row } from "react-bootstrap"
 import { Avatar, Name, Role, Social } from "./styles"
-// import { Container } from './styles';
 
-enum RoleEnum {
-  "Tech Lead",
-  "Software Engineer",
-  "Quality Assurance Engineer",
-}
-
-type RoleType = "Quality Assurance Engineer" | "Software Engineer" | "Tech Lead"
-
-interface TeamInterface {
-  name: string
-  role: RoleType
-  github?: string
-  linkedin?: string
-}
+import { TeamInterface } from '../../../../interfaces/team.interface';
 
 const Team: React.FC = () => {
   const team: TeamInterface[] = [
