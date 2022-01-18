@@ -5,7 +5,7 @@ import { Title, SubTitle, Section, Banner } from "./styles"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { ContributeButton, DownloadButton } from "../../../styles/buttons"
-import { graphql, useStaticQuery, withPrefix } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 const Welcome: React.FC = () => {
   const { t } = useTranslation()
@@ -37,7 +37,7 @@ const Welcome: React.FC = () => {
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Banner src={withPrefix(image?.publicURL)} fluid alt={image?.name} />
+            <Banner src={image?.publicURL} fluid alt={image?.name} />
           </Col>
         </Row>
       </Container>

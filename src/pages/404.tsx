@@ -15,7 +15,7 @@ export default function Page404({ data }) {
     <Template title={t("404_title")}>
       <Section dark>
         <Container>
-          <Image className="d-block m-auto" src={withPrefix(image?.publicURL)} title={image?.name} />
+          <Image className="d-block m-auto" src={image?.publicURL} title={image?.name} />
           <Stack
             className="align-items-center my-5 m-auto"
             style={{ width: "40%" }}

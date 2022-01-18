@@ -23,7 +23,7 @@ const ProjectsWithTrustedCodes: React.FC = () => {
         <SubTitleSection className="m-0">
           {t("projects_with_trusted_codes_subtitle")}
         </SubTitleSection>
-        <Image className="mx-auto vstack" fluid src={withPrefix(image?.publicURL)} />
+        <Image className="mx-auto vstack" fluid src={image?.publicURL} />
       </Container>
     </Section>
   )

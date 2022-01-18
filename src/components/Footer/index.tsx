@@ -7,7 +7,7 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
-import { useStaticQuery, graphql, withPrefix } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Footer: React.FC = () => {
   const { t } = useTranslation()
@@ -33,12 +33,12 @@ const Footer: React.FC = () => {
             <List>
               <li>
                 <a href="https://opensource.zup.com.br/" target="_blank">
-                  <img src={withPrefix(opensource?.publicURL)} alt="Opensource logo" />
+                  <img src={opensource?.publicURL} alt="Opensource logo" />
                 </a>
               </li>
               <li>
                 <a href="https://zup.com.br/" target="_blank">
-                  <img src={withPrefix(zup?.publicURL)} alt="Zup logo" />
+                  <img src={zup?.publicURL} alt="Zup logo" />
                 </a>
               </li>
             </List>
