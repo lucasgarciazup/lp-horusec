@@ -37,7 +37,7 @@ const WhereToUse: React.FC = () => {
           <Col>
             <Img
               fixed={image?.childImageSharp?.fixed}
-              className="mx-auto d-block"
+              className="mx-auto d-block img-fluid"
             />
           </Col>
         </Row>

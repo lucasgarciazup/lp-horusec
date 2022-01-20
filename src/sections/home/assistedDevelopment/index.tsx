@@ -28,7 +28,7 @@ const AssistedDevelopment: React.FC = () => {
       <Container>
         <Img
           fixed={image.childImageSharp.fixed}
-          className="mx-auto d-block mb-5"
+          className="mx-auto d-block mb-5 img-fluid"
         />
         <TitleSection>{t("assisted_development_title")}</TitleSection>
         <SubTitleSection>{t("assisted_development_subtitle")}</SubTitleSection>

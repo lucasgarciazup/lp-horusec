@@ -1,37 +1,46 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Dropdown } from "react-bootstrap"
 import { DropdownToggleProps } from "react-bootstrap/esm/DropdownToggle"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { Next, PerPage, Previous, Wrapper } from "./styles"
 import { PaginationInterface } from "../../interfaces/pagination.interface"
+import ReactPaginate from "react-paginate"
 
 const CustomPerPage = React.forwardRef(
   (props: DropdownToggleProps, ref: React.Ref<HTMLDivElement>) => (
-    <PerPage ref={ref} {...props}>{props.children}</PerPage>
+    <PerPage ref={ref} {...props}>
+      {props.children}
+    </PerPage>
   )
 )
 
-export default function Pagination(props: PaginationInterface) {
-  const { totalItems, rowsPerPage } = props.paginate
-  const { rowsPerPageOptions } = props
-  const totalPage = Math.ceil(totalItems / rowsPerPage)
+export default function Pagination({
+  itemsPerPageOptions,
+  items,
+  handleCurrentItems,
+}: PaginationInterface) {
   const { t } = useTranslation()
+  const [pageCount, setPageCount] = useState(0)
+  const [pageCurrent, setPageCurrent] = useState(1)
+  const [itemOffset, setItemOffset] = useState(0)
+  const [itemsPerPage, setItemsPerPage] = useState(itemsPerPageOptions[0] || 10)
 
-  const handleSelect = (eventKey: number) => {
-    props.onChange(eventKey)
-  }
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage
+    handleCurrentItems(items.slice(itemOffset, endOffset))
+    setPageCount(Math.ceil(items.length / itemsPerPage))
+  }, [itemOffset, itemsPerPage, items])
 
-  const handlePrevious = e => {
-    props.onChange("prev")
-  }
-  const handeNext = e => {
-    props.onChange("next")
+  const handlePageClick = (event: { selected: number }) => {
+    const newOffset = (event.selected * itemsPerPage) % items.length
+    setPageCurrent(++event.selected)
+    setItemOffset(newOffset)
   }
 
   return (
     <Wrapper>
-      <div>{rowsPerPage}</div>
+      <div>{itemsPerPage}</div>
 
       <Dropdown>
         <Dropdown.Toggle
@@ -40,11 +49,11 @@ export default function Pagination(props: PaginationInterface) {
         ></Dropdown.Toggle>
 
         <Dropdown.Menu align="start" renderOnMount style={{ minWidth: 0 }}>
-          {rowsPerPageOptions.map((el, index) => (
+          {itemsPerPageOptions.map((el, index) => (
             <Dropdown.Item
               key={index.toString()}
-              onClick={() => handleSelect(el)}
-              disabled={el === rowsPerPage}
+              onClick={() => setItemsPerPage(el)}
+              disabled={el === itemsPerPage}
             >
               {el}
             </Dropdown.Item>
@@ -52,12 +61,18 @@ export default function Pagination(props: PaginationInterface) {
         </Dropdown.Menu>
       </Dropdown>
       <div>
-        {t(totalPage === 1 ? "per_page" : "per_page_plural", {
-          count: totalPage,
+        {t(pageCount === 1 ? "per_page" : "per_page_plural", {
+          from: pageCurrent,
+          to: pageCount,
         })}
       </div>
-      <Previous onClick={handlePrevious} />
-      <Next onClick={handeNext} />
+      <ReactPaginate
+        nextLabel={<Next />}
+        previousLabel={<Previous />}
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={0}
+        pageCount={pageCount}
+      />
     </Wrapper>
   )
 }

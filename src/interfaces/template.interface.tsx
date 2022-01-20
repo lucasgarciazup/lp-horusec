@@ -1,3 +1,3 @@
 export interface TemplateInterface {
-    title?: string
+  title?: string
 }

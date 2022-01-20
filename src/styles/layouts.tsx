@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { SectionInterface } from "../interfaces/section.interface";
+import { SectionInterface } from "../interfaces/section.interface"
 
 export const Section = styled.section<SectionInterface>`
   padding: 56px 0;
@@ -40,6 +40,13 @@ export const TitleSection = styled.h1`
   margin-bottom: 24px;
 
   color: ${props => props.theme.colors.secondary};
+
+  @media (max-width: 500px) {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: -1.6px;
+  }
 `
 
 export const SubTitleSection = styled.h2`

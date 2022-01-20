@@ -1,11 +1,12 @@
 {
   "footer_copyright": "Todos os direitos reservados.",
-  "footer_technologies": "Tecnologias",
+  "footer_other_products": "Outros produtos",
   "footer_community": "Comunidade",
-  "footer_events": "Eventos",
-  "footer_privacy_policy": "Política de Privacidade",
+  "footer_privacy_policy": "Política de privacidade",
   "footer_social_networks": "Redes Sociais",
   "footer_who_we_are": "Quem somos",
   "footer_about_us": "Sobre nós",
-  "footer_contact": "Contato"
+  "footer_contact": "Contato",
+  "footer_forum" : "Fórum",
+  "footer_blog": "Blog"
 }

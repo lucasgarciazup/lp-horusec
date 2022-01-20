@@ -34,6 +34,9 @@ export const List = styled.ul`
   li > a {
     color: #404659 !important;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 `
 

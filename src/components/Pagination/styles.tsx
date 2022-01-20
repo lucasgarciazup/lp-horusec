@@ -20,6 +20,31 @@ export const Wrapper = styled.div`
     font-size: 12px;
     line-height: 16px;
   }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+    padding: 0;
+  }
+
+  ul > li {
+    display: none;
+  }
+
+  ul > li:first-child,
+  ul > li:last-child {
+    display: block;
+  }
+
+  ul > li.disabled * div {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
 `
 
 export const Previous = styled.div`

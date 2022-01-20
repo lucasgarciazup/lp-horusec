@@ -33,7 +33,7 @@ const TypesOfAnalysis: React.FC = () => {
         <CaptionSection className="text-center">
           {t("type_of_analysis_subtitle")}
         </CaptionSection>
-        <Row className="mt-5 justify-content-center">
+        <Row className="row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5 justify-content-center">
           {cards.map((item, index) => (
             <Col key={index.toString()} className="text-center">
               <img

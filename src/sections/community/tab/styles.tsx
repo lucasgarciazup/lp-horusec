@@ -22,7 +22,7 @@ export const TabStyled = styled(Tabs)`
   .nav-link.active {
     font-weight: 500;
     color: #1a2138 !important;
-
+    background-color: transparent !important;
     border-color: #ff6d00 !important;
     border-width: 2px;
     border-style: solid;

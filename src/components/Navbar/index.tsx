@@ -10,11 +10,13 @@ import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory } from "@reach/router"
+import { useSiteMetadata } from '../../hooks/useSiteMetada'
 
 const Navbar: React.FC = () => {
   const { language, languages, changeLanguage } = useI18next()
   const { t } = useTranslation()
   const { location } = globalHistory
+  const { social } = useSiteMetadata();
 
   const menus = [
     {
@@ -35,13 +37,13 @@ const Navbar: React.FC = () => {
     },
     {
       title: t("navbar_github"),
-      link: "https://github.com/ZupIT/horusec",
+      link: social.github,
       target: "_blank",
     },
   ]
 
   return (
-    <NavbarBS className="shadow-sm bg-white p-0" expand="lg" sticky="top">
+    <NavbarBS className="shadow-sm bg-white p-0" expand="lg" fixed="top">
       <Container>
         <Link to="/" className="navbar-brand">
           <img src={withPrefix("app.png")} width="160px" height="auto" />
@@ -52,7 +54,7 @@ const Navbar: React.FC = () => {
         <NavbarBS.Collapse id="basic-navbar-nav">
           <Nav className="me-auto w-100 justify-content-around">
             {menus.map((menu, index) =>
-              menu.link.includes("http") ? (
+              menu.link?.includes("http") ? (
                 <MenuLinkExternal
                   key={index.toString()}
                   href={menu.link}

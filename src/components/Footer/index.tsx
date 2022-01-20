@@ -7,17 +7,20 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, withPrefix, Link } from "gatsby"
+import { useSiteMetadata } from '../../hooks/useSiteMetada'
 
 const Footer: React.FC = () => {
   const { t } = useTranslation()
+
+  const { social } = useSiteMetadata();
 
   const { opensource, zup } = useStaticQuery(graphql`
     query {
       opensource: file(name: { eq: "opensource" }) {
         name
         publicURL
-      },
+      }
       zup: file(name: { eq: "zup" }) {
         name
         publicURL
@@ -28,9 +31,12 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <Container>
-        <Row>
+        <Row className="row-cols-2 row-cols-sm-3 row-cols-lg-5">
           <Col>
             <List>
+              <li>
+                  <img className='img-fluid' src={withPrefix("app.png")} alt="Horusec logo" style={{ maxWidth: "150px"}} />
+              </li>
               <li>
                 <a href="https://opensource.zup.com.br/" target="_blank">
                   <img src={opensource?.publicURL} alt="Opensource logo" />
@@ -44,46 +50,60 @@ const Footer: React.FC = () => {
             </List>
           </Col>
           <Col>
-            <Topic>Horusec</Topic>
+            <Topic>{t("footer_other_products")}</Topic>
             <List>
-              <li>{t("footer_technologies")}</li>
+              <li>
+                <a href="https://charlescd.io/">Charles</a>
+              </li>
+              <li>
+                <a href="https://usebeagle.io/">Beagle</a>
+              </li>
+              <li>
+                <a href="https://ritchiecli.io/">Ritchie</a>
+              </li>
             </List>
           </Col>
           <Col>
             <Topic>{t("footer_community")}</Topic>
             <List>
-              <li>{t("footer_technologies")}</li>
-              <li>Blog</li>
               <li>
-                <a href="https://opensource.zup.com.br/radar" target="_blank">
-                  Tech Radar
+                <a href="https://medium.com/zup-it" target="_blank">
+                  {t("footer_blog")}
                 </a>
               </li>
-              <li>{t("footer_events")}</li>
-              <li>{t("footer_privacy_policy")}</li>
+              <li>
+                <a href="https://forum.zup.com.br/" target="_blank">
+                  {t("footer_forum")}
+                </a>
+              </li>
+              <li>
+                <a href="https://insights.zup.com.br/politica-privacidade" target="_blank">
+                  {t("footer_privacy_policy")}
+                </a>
+              </li>
             </List>
           </Col>
           <Col>
             <Topic>{t("footer_social_networks")}</Topic>
             <List>
               <li>
-                <a>
-                  <FaGithub /> Twitter
+                <a href={social.twitter} target="_blank">
+                  <FaTwitter /> Twitter
                 </a>
               </li>
               <li>
-                <a>
-                  <FaTwitter /> Youtube
+                <a href={social.youtube} target="_blank">
+                  <FaYoutube /> Youtube
                 </a>
               </li>
               <li>
-                <a>
-                  <FaLinkedin /> Github
+                <a href={social.github} target="_blank">
+                  <FaGithub /> Github
                 </a>
               </li>
               <li>
-                <a>
-                  <FaYoutube /> Linkedin
+                <a href={social.linkedin} target="_blank">
+                  <FaLinkedin /> Linkedin
                 </a>
               </li>
             </List>
@@ -91,8 +111,16 @@ const Footer: React.FC = () => {
           <Col>
             <Topic>{t("footer_who_we_are")}</Topic>
             <List>
-              <li>{t("footer_about_us")}</li>
-              <li>{t("footer_contact")}</li>
+              <li>
+                <Link to='/about'>
+                  {t("footer_about_us")}
+                </Link> 
+              </li>
+              <li>
+                <a href="https://opensource.zup.com.br/contact" target="_blank">
+                  {t("footer_contact")}
+                </a>
+              </li>
             </List>
           </Col>
         </Row>

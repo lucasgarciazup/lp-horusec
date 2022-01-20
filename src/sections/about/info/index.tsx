@@ -8,10 +8,10 @@ const Info: React.FC = () => {
     <Section>
       <Container>
         <Row className="justify-content-center">
-          <Col className="col-3">
+          <Col className="col-6 col-sm-6 col-md-4 col-lg-3">
             <ContributeButton highlight />
           </Col>
-          <Col className="col-3">
+          <Col className="col-6 col-sm-6 col-md-4 col-lg-3">
             <DocumentationButton />
           </Col>
         </Row>

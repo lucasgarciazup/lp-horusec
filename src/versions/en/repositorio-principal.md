@@ -1,5 +1,5 @@
 ---
-title: 'Main repository: Horusec CLI'
+title: "Main repository: Horusec CLI"
 slug: master repository
 ---
 

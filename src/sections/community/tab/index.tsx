@@ -4,21 +4,24 @@ import { Section } from "../../../styles/layouts"
 import { TabStyled } from "./styles"
 import Team from "../tabs/team"
 import Videos from "../tabs/videos"
-import Versions from '../tabs/versions'
+import Versions from "../tabs/versions"
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 export default function TabCommunity() {
+
+  const { t } = useTranslation();
   const tabs = [
     {
       key: "versions",
-      title: "Versões",
+      title: t("versions"),
     },
     {
       key: "videos",
-      title: "Videos",
+      title: t("videos"),
     },
     {
       key: "team",
-      title: "Time Horusec",
+      title: t("team"),
     },
   ]
 

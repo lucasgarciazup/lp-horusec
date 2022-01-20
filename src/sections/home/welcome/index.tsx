@@ -22,22 +22,22 @@ const Welcome: React.FC = () => {
   return (
     <Section id="welcome">
       <Container className="py-5">
-        <Row>
+        <Row className='row-cols-1 row-cols-lg-2'>
           <Col>
             <Title>{t("welcome_title")}</Title>
             <SubTitle>{t("welcome_subtitle")}</SubTitle>
             <Row>
-              <Col className='col-6 col-sm-5 col-md-4'>
+              <Col className="col-6 col-sm-5 col-md-4">
                 <DownloadButton highlight />
               </Col>
-              <Col className='col-6 col-sm-5 col-md-4'>
+              <Col className="col-6 col-sm-5 col-md-4">
                 <ContributeButton />
               </Col>
             </Row>
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Banner src={image?.publicURL} fluid alt={image?.name} />
+            <Banner src={image?.publicURL} fluid alt={image?.name} className='d-none d-lg-block' />
           </Col>
         </Row>
       </Container>

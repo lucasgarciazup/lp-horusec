@@ -3,12 +3,16 @@
 In this project contains all website template of **[HORUSEC](https://horusec.io/)**.
 
 # Requirements
+
 To edit, run and build this project is necessary some requirements, they are:
-* [Node](https://nodejs.org/en/)
+
+- [Node](https://nodejs.org/en/)
   - Check intallation run in your terminal `npm -v` and `node -v` and `yarn -v`
 
 # Install
+
 For install all dependences this project run the command
+
 ```bash
 npm install
 ```
@@ -22,7 +26,9 @@ npm start
 Check if `Web Server is available at http://localhost:8000`
 
 # Build
+
 TO build this project run the follow command
+
 ```
 npm run build
 ```

@@ -1,4 +1,4 @@
 {
-  "per_page": "de {{ count }} página",
-  "per_page_plural": "de {{ count }} páginas"
+  "per_page": "{{ from }} de {{ to }} página",
+  "per_page_plural": "{{ from }} de {{ to }} páginas"
 }

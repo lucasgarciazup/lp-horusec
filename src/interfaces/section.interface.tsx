@@ -1,3 +1,3 @@
 export interface SectionInterface {
-    dark?: boolean
+  dark?: boolean
 }

@@ -28,7 +28,7 @@ const CultureOfSafety: React.FC = () => {
       <Container>
         <Img
           fixed={image.childImageSharp.fixed}
-          className="mx-auto d-block mb-5"
+          className="mx-auto d-block mb-5 img-fluid"
         />
         <TitleSection>{t("culture_of_safety_title")}</TitleSection>
         <SubTitleSection>{t("culture_of_safety_subtitle")}</SubTitleSection>

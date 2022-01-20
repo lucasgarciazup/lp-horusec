@@ -42,4 +42,8 @@ export const LangSelect = styled.div`
     vertical-align: 0;
     border: none;
   }
+
+  .dropdown-menu {
+    min-width: 100% !important;
+  }
 `

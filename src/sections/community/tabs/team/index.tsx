@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Col, Container, Row } from "react-bootstrap"
 import { Avatar, Name, Role, Social } from "./styles"
 
-import { TeamInterface } from '../../../../interfaces/team.interface';
+import { TeamInterface } from "../../../../interfaces/team.interface"
 
 const Team: React.FC = () => {
   const team: TeamInterface[] = [

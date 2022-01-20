@@ -4,12 +4,12 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 import { Section, SubTitleSection, TitleSection } from "../../../styles/layouts"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
-import { DocumentationButton } from '../../../styles/buttons'
-import styled from 'styled-components'
+import { DocumentationButton } from "../../../styles/buttons"
+import styled from "styled-components"
 
 const StyledDocumentationButton = styled(DocumentationButton).attrs({
-  className: "mx-auto mx-lg-0"
-})``;
+  className: "mx-auto mx-lg-0",
+})``
 
 const ManageFoundVulnerabilities: React.FC = () => {
   const { t } = useTranslation()
@@ -32,7 +32,7 @@ const ManageFoundVulnerabilities: React.FC = () => {
   return (
     <Section>
       <Container>
-        <Row className='gy-5 justify-content-center align-items-center'>
+        <Row className="gy-5 justify-content-center align-items-center">
           <Col className="col-10 col-lg-5">
             <Img
               fluid={image?.childImageSharp?.fluid}
@@ -49,7 +49,11 @@ const ManageFoundVulnerabilities: React.FC = () => {
             <SubTitleSection className="text-center text-lg-start">
               {t("manage_found_vulnerabilities_subtitle")}
             </SubTitleSection>
-            <StyledDocumentationButton highlight width='50%' />
+            <Row>
+              <Col className="col-lg-4">
+                <StyledDocumentationButton highlight />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
