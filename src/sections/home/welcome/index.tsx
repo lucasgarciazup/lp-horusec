@@ -22,7 +22,7 @@ const Welcome: React.FC = () => {
   return (
     <Section id="welcome">
       <Container className="py-5">
-        <Row className='row-cols-1 row-cols-lg-2'>
+        <Row className="row-cols-1 row-cols-lg-2">
           <Col>
             <Title>{t("welcome_title")}</Title>
             <SubTitle>{t("welcome_subtitle")}</SubTitle>
@@ -37,7 +37,12 @@ const Welcome: React.FC = () => {
           </Col>
 
           <Col className="d-flex justify-content-end">
-            <Banner src={image?.publicURL} fluid alt={image?.name} className='d-none d-lg-block' />
+            <Banner
+              src={image?.publicURL}
+              fluid
+              alt={image?.name}
+              className="d-none d-lg-block"
+            />
           </Col>
         </Row>
       </Container>

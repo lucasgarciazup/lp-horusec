@@ -7,8 +7,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import { TemplateInterface } from "../interfaces/template.interface"
-import { Container } from 'react-bootstrap'
-
 export const Template: React.FC<TemplateInterface> = ({
   title = "",
   children,
@@ -20,7 +18,7 @@ export const Template: React.FC<TemplateInterface> = ({
   if (title) titlePage.unshift(title)
 
   return (
-    <main className='mt-5'>
+    <main className="mt-5">
       <Helmet title={titlePage.join(" | ")} defaultTitle={siteMetadata.title} />
       <GlobalStyle />
       <Navbar />

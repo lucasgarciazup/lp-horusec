@@ -8,6 +8,6 @@ module.exports = {
     youtube: "https://youtube.com/channel/UCJWZyJ-36yNscqnnHiwjkhQ",
     instagram: "https://instagram.com/zupinnovation/",
     linkedin: "https://linkedin.com/company/zup-it-solutions/",
-    blog: "https://medium.com/zup-it"
-  }
+    blog: "https://medium.com/zup-it",
+  },
 }

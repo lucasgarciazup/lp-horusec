@@ -14,8 +14,7 @@ export const Title = styled.h1`
 
   color: ${props => props.theme.colors.secondary};
 
-
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 32px;
     line-height: 40px;
     letter-spacing: -1.6px;

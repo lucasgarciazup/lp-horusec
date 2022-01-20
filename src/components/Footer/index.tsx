@@ -8,12 +8,12 @@ import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { useStaticQuery, graphql, withPrefix, Link } from "gatsby"
-import { useSiteMetadata } from '../../hooks/useSiteMetada'
+import { useSiteMetadata } from "../../hooks/useSiteMetada"
 
 const Footer: React.FC = () => {
   const { t } = useTranslation()
 
-  const { social } = useSiteMetadata();
+  const { social } = useSiteMetadata()
 
   const { opensource, zup } = useStaticQuery(graphql`
     query {
@@ -35,7 +35,12 @@ const Footer: React.FC = () => {
           <Col>
             <List>
               <li>
-                  <img className='img-fluid' src={withPrefix("app.png")} alt="Horusec logo" style={{ maxWidth: "150px"}} />
+                <img
+                  className="img-fluid"
+                  src={withPrefix("app.png")}
+                  alt="Horusec logo"
+                  style={{ maxWidth: "150px" }}
+                />
               </li>
               <li>
                 <a href="https://opensource.zup.com.br/" target="_blank">
@@ -77,7 +82,10 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="https://insights.zup.com.br/politica-privacidade" target="_blank">
+                <a
+                  href="https://insights.zup.com.br/politica-privacidade"
+                  target="_blank"
+                >
                   {t("footer_privacy_policy")}
                 </a>
               </li>
@@ -112,9 +120,7 @@ const Footer: React.FC = () => {
             <Topic>{t("footer_who_we_are")}</Topic>
             <List>
               <li>
-                <Link to='/about'>
-                  {t("footer_about_us")}
-                </Link> 
+                <Link to="/about">{t("footer_about_us")}</Link>
               </li>
               <li>
                 <a href="https://opensource.zup.com.br/contact" target="_blank">

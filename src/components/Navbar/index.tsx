@@ -10,13 +10,13 @@ import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory } from "@reach/router"
-import { useSiteMetadata } from '../../hooks/useSiteMetada'
+import { useSiteMetadata } from "../../hooks/useSiteMetada"
 
 const Navbar: React.FC = () => {
   const { language, languages, changeLanguage } = useI18next()
   const { t } = useTranslation()
   const { location } = globalHistory
-  const { social } = useSiteMetadata();
+  const { social } = useSiteMetadata()
 
   const menus = [
     {

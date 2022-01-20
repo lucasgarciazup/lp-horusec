@@ -5,11 +5,10 @@ import { TabStyled } from "./styles"
 import Team from "../tabs/team"
 import Videos from "../tabs/videos"
 import Versions from "../tabs/versions"
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 export default function TabCommunity() {
-
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const tabs = [
     {
       key: "versions",
