@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "Horusec",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Horusec is an open source framework that enhances the identification of vulnerabilities in your project with just one command.",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
@@ -45,18 +45,21 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.15.3",
     "react-paginate": "^8.1.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.5",
+    "@types/react-slick": "^0.23.8",
     "@types/styled-components": "^5.1.19",
     "prettier": "^2.5.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/ZupIT/horusec"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ZupIT/horusec/issues"
   }
 }

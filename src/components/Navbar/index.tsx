@@ -4,6 +4,9 @@ import {
   Container,
   NavDropdown,
   Nav,
+  Stack,
+  Row,
+  Col,
 } from "react-bootstrap"
 import { withPrefix } from "gatsby"
 import { LangSelect, MenuLink, MenuLinkExternal } from "./styles"
@@ -12,11 +15,17 @@ import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import { globalHistory } from "@reach/router"
 import { useSiteMetadata } from "../../hooks/useSiteMetada"
 
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
+
 const Navbar: React.FC = () => {
   const { language, languages, changeLanguage } = useI18next()
   const { t } = useTranslation()
   const { location } = globalHistory
   const { social } = useSiteMetadata()
+  delete social["blog"]
 
   const menus = [
     {
@@ -41,6 +50,13 @@ const Navbar: React.FC = () => {
       target: "_blank",
     },
   ]
+
+  const icons = {
+    github: <FaGithub size={24} color="#404659" />,
+    youtube: <FaYoutube size={24} color="#404659" />,
+    twitter: <FaTwitter size={24} color="#404659" />,
+    linkedin: <FaLinkedin size={24} color="#404659" />,
+  }
 
   return (
     <NavbarBS className="shadow-sm bg-white p-0" expand="lg" fixed="top">
@@ -78,9 +94,29 @@ const Navbar: React.FC = () => {
               )
             )}
           </Nav>
-          <Nav>
+
+          <LangSelect className="d-none d-lg-block">
+            <NavDropdown id="nav-dropdown-languages" title={t(language)}>
+              {languages
+                .filter(lang => lang !== language)
+                .map(item => (
+                  <NavDropdown.Item
+                    key={item}
+                    onClick={() => changeLanguage(item)}
+                  >
+                    {t(item)}
+                  </NavDropdown.Item>
+                ))}
+            </NavDropdown>
+          </LangSelect>
+
+          <div className="d-flex d-lg-none w-100">
             <LangSelect>
-              <NavDropdown id="nav-dropdown-languages" title={t(language)}>
+              <NavDropdown
+                id="nav-dropdown-languages-mobile"
+                style={{ border: "none" }}
+                title={t(language)}
+              >
                 {languages
                   .filter(lang => lang !== language)
                   .map(item => (
@@ -93,7 +129,16 @@ const Navbar: React.FC = () => {
                   ))}
               </NavDropdown>
             </LangSelect>
-          </Nav>
+            <Stack className="gap-3 flex-row w-75 align-items-center justify-content-center">
+              {Object.entries(social)
+                .sort(([a], [b]) => a.localeCompare(b))
+                .map(([key, value]) => (
+                  <a key={key} href={value} title={key} target="_blank">
+                    {icons[key]}
+                  </a>
+                ))}
+            </Stack>
+          </div>
         </NavbarBS.Collapse>
       </Container>
     </NavbarBS>

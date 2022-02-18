@@ -1,30 +1,12 @@
 import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import { CaptionSection, Section, TitleSection } from "../../../styles/layouts"
-import { withPrefix } from "gatsby"
+import CardsTypeOfAnalysis from "../../../components/CardsTypeOfAnalysis"
 
 const TypesOfAnalysis: React.FC = () => {
   const { t } = useTranslation()
-
-  const cards = [
-    {
-      icon: t("type_of_analysis_card_1_icon"),
-      title: t("type_of_analysis_card_1_title"),
-      caption: t("type_of_analysis_card_1_caption"),
-    },
-    {
-      icon: t("type_of_analysis_card_2_icon"),
-      title: t("type_of_analysis_card_2_title"),
-      caption: t("type_of_analysis_card_2_caption"),
-    },
-    {
-      icon: t("type_of_analysis_card_3_icon"),
-      title: t("type_of_analysis_card_3_title"),
-      caption: t("type_of_analysis_card_3_caption"),
-    },
-  ]
 
   return (
     <Section>
@@ -33,20 +15,8 @@ const TypesOfAnalysis: React.FC = () => {
         <CaptionSection className="text-center">
           {t("type_of_analysis_subtitle")}
         </CaptionSection>
-        <Row className="row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5 justify-content-center">
-          {cards.map((item, index) => (
-            <Col key={index.toString()} className="text-center">
-              <img
-                src={withPrefix(item.icon)}
-                height={70}
-                width="auto"
-                className="mb-3"
-              />
-              <h2 className="mx-auto mb-3">{item.title}</h2>
-              <p>{item.caption}</p>
-            </Col>
-          ))}
-        </Row>
+
+        <CardsTypeOfAnalysis />
       </Container>
     </Section>
   )

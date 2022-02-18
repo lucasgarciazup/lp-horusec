@@ -15,6 +15,14 @@ const menuCss = css`
   &.active {
     border-bottom: solid #ff6d00 4px;
   }
+
+  @media (max-width: 992px) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+    color: #1a2138;
+    border-bottom: 1px solid #000000;
+  }
 `
 export const MenuLink = styled(Link)`
   ${menuCss}
@@ -22,6 +30,10 @@ export const MenuLink = styled(Link)`
 
 export const MenuLinkExternal = styled("a")`
   ${menuCss}
+`
+
+export const IconLink = styled("a")`
+  color: #404659;
 `
 
 export const LangSelect = styled.div`
@@ -36,7 +48,17 @@ export const LangSelect = styled.div`
     border-radius: 4px;
   }
 
-  #nav-dropdown-languages::after {
+  #nav-dropdown-languages-mobile {
+    display: flex;
+    justify-content: space-around;
+    color: #404659;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  #nav-dropdown-languages::after,
+  #nav-dropdown-languages-mobile::after {
     content: url(${() => withPrefix("icons/arrow-down.svg")});
     margin-left: 0.5em;
     vertical-align: 0;

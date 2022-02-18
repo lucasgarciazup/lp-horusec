@@ -31,18 +31,19 @@ const WhoUse: React.FC = () => {
   `)
 
   return (
-    <Section>
+    <Section className="mb-5">
       <Container>
         <TitleSection className="mb-5">{t("who_use_title")}</TitleSection>
-        <Row className="row-cols-3 row-cols-lg-4 gy-5 justify-content-center align-items-center">
+        <Row className="row-cols-1 row-cols-md-3 row-cols-lg-4 gy-3 justify-content-center align-items-center">
           {images.map(image => (
-            <Col key={image.id} style={{ height: 100 }}>
+            <Col key={image.id}>
               <Img
                 loading="lazy"
                 fixed={image.childImageSharp.fixed}
                 alt={image.name}
-                className="d-flex mx-auto w-75 h-100"
+                className="img-fluid mx-auto w-100"
                 objectFit="contain"
+                objectPosition="center"
               />
             </Col>
           ))}

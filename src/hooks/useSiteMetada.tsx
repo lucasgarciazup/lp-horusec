@@ -14,7 +14,6 @@ export const useSiteMetadata = () => {
               twitter
               github
               youtube
-              instagram
               linkedin
               blog
             }
